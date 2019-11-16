@@ -29,9 +29,12 @@
 import SwiftUI
 
 struct ContentView: View {
+  
+  @State private var isActivated = false
+  
     var body: some View {
       VStack {
-        Text("Hello World!")
+        Toggle("Activate Cat Nip!", isOn: $isActivated)
       }
     }
 }
