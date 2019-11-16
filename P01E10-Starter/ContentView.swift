@@ -33,6 +33,13 @@ struct ContentView: View {
   var isActivatedMessage: String {
     return "CatNip is " + (isActivated ? "Activated!" : "Deactivated")
   }
+  
+  var dateFormatter: DateFormatter {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .short
+    return dateFormatter
+  }
+  
   @State private var isActivated = false
   @State private var pickedDate = Date()
   
@@ -55,6 +62,8 @@ struct ContentView: View {
         DatePicker(selection: $pickedDate, displayedComponents: [.date]){
           Text("Select Date")
         }
+        
+        Text("\(dateFormatter.string(from: pickedDate))")
       }
     }
 }
