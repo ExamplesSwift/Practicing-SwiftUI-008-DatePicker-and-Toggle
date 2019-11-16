@@ -30,11 +30,17 @@ import SwiftUI
 
 struct ContentView: View {
   
+  var isActivatedMessage: String {
+    return "CatNip is " + (isActivated ? "Activated!" : "Deactivated")
+  }
   @State private var isActivated = false
   
     var body: some View {
       VStack {
         Toggle("Activate Cat Nip!", isOn: $isActivated)
+          Text(isActivatedMessage)
+          .foregroundColor(isActivated ? .green : .red)
+          .fontWeight(isActivated ? .heavy : .regular)
       }
     }
 }
