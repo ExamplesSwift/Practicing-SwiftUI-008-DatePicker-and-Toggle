@@ -34,6 +34,7 @@ struct ContentView: View {
     return "CatNip is " + (isActivated ? "Activated!" : "Deactivated")
   }
   @State private var isActivated = false
+  @State private var pickedDate = Date()
   
     var body: some View {
       VStack {
@@ -49,6 +50,10 @@ struct ContentView: View {
             .frame(width: 100, height: 100)
             Text("Acticate Catnip!")
           }
+        }
+        
+        DatePicker(selection: $pickedDate, displayedComponents: [.date]){
+          Text("Select Date")
         }
       }
     }
