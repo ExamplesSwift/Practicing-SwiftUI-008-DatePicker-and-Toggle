@@ -41,6 +41,15 @@ struct ContentView: View {
           Text(isActivatedMessage)
           .foregroundColor(isActivated ? .green : .red)
           .fontWeight(isActivated ? .heavy : .regular)
+        
+        Toggle(isOn: $isActivated) {
+          VStack {
+            Image("CatNip")
+            .resizable()
+            .frame(width: 100, height: 100)
+            Text("Acticate Catnip!")
+          }
+        }
       }
     }
 }
