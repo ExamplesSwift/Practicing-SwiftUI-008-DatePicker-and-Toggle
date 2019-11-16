@@ -59,7 +59,10 @@ struct ContentView: View {
           }
         }
         
-        DatePicker(selection: $pickedDate, displayedComponents: [.date]){
+//        DatePicker(selection: $pickedDate, displayedComponents: [.date]){
+//          Text("Select Date")
+//        }
+        DatePicker(selection: $pickedDate, in: ClosedRange(uncheckedBounds: (lower: Date(), upper: Date(timeIntervalSinceNow: 900000))), displayedComponents: .date) {
           Text("Select Date")
         }
         
